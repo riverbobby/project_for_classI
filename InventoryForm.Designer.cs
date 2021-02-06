@@ -1,7 +1,7 @@
 ﻿
 namespace JustinTownleySoftwareI
 {
-    partial class Inventory
+    partial class InventoryForm
     {
         /// <summary>
         ///  Required designer variable.

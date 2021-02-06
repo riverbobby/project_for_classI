@@ -1,7 +1,7 @@
 ﻿
 namespace JustinTownleySoftwareI
 {
-    partial class Product
+    partial class ProductForm
     {
         /// <summary>
         /// Required designer variable.
