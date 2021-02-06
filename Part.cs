@@ -13,18 +13,26 @@ namespace JustinTownleySoftwareI
         public int Min { get; set; }
         public int Max { get; set; }
 
-        public static int partCount;
+        public static int partCount = 0;
 
-        public Part(string n)
+        public Part(string n, decimal p, int inStock, int min, int max)
         {
             PartID = partCount++;
             Name = n;
+            Price = p;
+            InStock = inStock;
+            Min = min;
+            Max = max;
         }
 
-        public Part(int partID, string n)
+        public Part(int partID, string n, decimal p, int inStock, int min, int max)
         {
             PartID = partID;
             Name = n;
+            Price = p;
+            InStock = inStock;
+            Min = min;
+            Max = max;
         }
     }
 }

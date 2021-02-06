@@ -14,19 +14,36 @@ namespace JustinTownleySoftwareI
         public int Min { get; set; }
         public int Max { get; set; }
 
-        public void addAssociatedPart(Part)
+        public static int productCount = 0;
+
+        public Product(string n, decimal p, int inStock, int min, int max)
+        {
+            ProductID = productCount++;
+            Name = n;
+            Price = p;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+        }
+
+        public Product()
         {
 
         }
 
-        public bool removeAssociatedPart(int)
-        {
+        //public void addAssociatedPart(Part)
+        //{
 
-        }
+        //}
 
-        public Part lookupAssociatedPart(int)
-        {
+        //public bool removeAssociatedPart(int)
+        //{
 
-        }
+        //}
+
+        //public Part lookupAssociatedPart(int)
+        //{
+
+        //}
     }
 }
