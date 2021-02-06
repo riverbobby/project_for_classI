@@ -170,7 +170,7 @@ namespace JustinTownleySoftwareI
             this.exitProgramButton.Text = "Exit";
             this.exitProgramButton.UseVisualStyleBackColor = true;
             // 
-            // Inventory
+            // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@ namespace JustinTownleySoftwareI
             this.Controls.Add(this.productDGV);
             this.Controls.Add(this.partsDGV);
             this.Controls.Add(this.label1);
-            this.Name = "Inventory";
+            this.Name = "InventoryForm";
             this.Text = "Main Screen";
             ((System.ComponentModel.ISupportInitialize)(this.partsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDGV)).EndInit();

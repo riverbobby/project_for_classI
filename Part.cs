@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-public class Part
+namespace JustinTownleySoftwareI
 {
-	public Part()
-	{
-	}
+    class Part
+    {
+    }
 }

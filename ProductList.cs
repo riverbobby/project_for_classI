@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JustinTownleySoftwareI
 {
-    class Product
+    class ProductList
     {
     }
 }
