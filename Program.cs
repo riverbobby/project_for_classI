@@ -15,11 +15,11 @@ namespace JustinTownleySoftwareI
         static void Main()
         {
             //pre-population of 5 parts for testing
-            BList.Parts.Add(new Inhouse(1, "Hose", 4.57m, 4, 2, 7, 56789));
-            BList.Parts.Add(new Outsourced(2, "Wheel", 10.89m, 4, 2, 7, "Troubador"));
-            BList.Parts.Add(new Inhouse(3, "Pedal", 3.24m, 4, 2, 7, 89446));
-            BList.Parts.Add(new Outsourced(4, "Chain", 5.82m, 4, 2, 7, "Madagar"));
-            BList.Parts.Add(new Inhouse(5, "Seat", 9.42m, 4, 2, 7, 40444));
+            Inventory.AllParts.Add(new Inhouse(1, "Hose", 4.57m, 4, 2, 7, 56789));
+            Inventory.AllParts.Add(new Outsourced(2, "Wheel", 10.89m, 4, 2, 7, "Troubador"));
+            Inventory.AllParts.Add(new Inhouse(3, "Pedal", 3.24m, 4, 2, 7, 89446));
+            Inventory.AllParts.Add(new Outsourced(4, "Chain", 5.82m, 4, 2, 7, "Madagar"));
+            Inventory.AllParts.Add(new Inhouse(5, "Seat", 9.42m, 4, 2, 7, 40444));
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

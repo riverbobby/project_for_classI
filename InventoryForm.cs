@@ -16,7 +16,7 @@ namespace JustinTownleySoftwareI
         {
             InitializeComponent();
 
-            partsDGV.DataSource = BList.Parts;
+            partsDGV.DataSource = Inventory.AllParts;
         }
 
         
