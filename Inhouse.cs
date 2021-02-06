@@ -6,5 +6,6 @@ namespace JustinTownleySoftwareI
 {
     class Inhouse
     {
+        public int MachineID { get; set; }
     }
 }
