@@ -12,6 +12,7 @@ namespace JustinTownleySoftwareI
 
         public static BindingList<Product> Products { get { return products; } set { products = value; } }
         public static BindingList<Part> AllParts { get { return allParts; } set { allParts = value; } }
+        
         //global static variables
         public static Part CurrentPart { get; set; }
         public static int CurrentPartID { get; set; }
@@ -21,15 +22,17 @@ namespace JustinTownleySoftwareI
         public static int CurrentProductIndex { get; set; }
 
         //global static methods
-        //public void addProduct(Product)
-        //{
-
-        //}
-
-        //public bool removeProduct(int)
-        //{
-
-        //}
+        public static void addProduct(Product product)
+        {
+            Products.Add(product);
+        }
+        
+        //The UML Class Diagram indicated this function to 
+        //have a bool return type and I saw no reason for this so I changed it to void
+        public static void removeProduct(int i)
+        {
+            Products.RemoveAt(i);
+        }
 
         public static Product lookupProduct(int i)
         {
@@ -51,15 +54,17 @@ namespace JustinTownleySoftwareI
             Products.RemoveAt(i + 1);
         }
 
-        //public void addPart(Part)
-        //{
+        public static void addPart(Part part)
+        {
+            AllParts.Add(part);
+        }
 
-        //}
-
-        //public bool deletePart(int)
-        //{
-
-        //}
+        //The UML Class Diagram indicated this function to 
+        //have a bool return type and I saw no reason for this so I changed it to void
+        public static void deletePart(int i)
+        {
+            AllParts.RemoveAt(i);
+        }
 
         public static Part lookupPart(int i)
         {

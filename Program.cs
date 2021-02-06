@@ -14,7 +14,7 @@ namespace JustinTownleySoftwareI
         [STAThread]
         static void Main()
         {
-            //pre-population of 5 parts for testing
+            //pre-population of 5 parts for testing **please change line (public static int partCount = 5;) in Part.cs
             Inventory.AllParts.Add(new Inhouse(1, "Hose", 4.57m, 4, 2, 7, 56789));
             Inventory.AllParts.Add(new Outsourced(2, "Wheel", 10.89m, 4, 2, 7, "Troubador"));
             Inventory.AllParts.Add(new Inhouse(3, "Pedal", 3.24m, 4, 2, 7, 89446));
