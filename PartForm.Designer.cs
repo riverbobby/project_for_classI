@@ -148,6 +148,7 @@ namespace JustinTownleySoftwareI
             this.partSaveButton.TabIndex = 10;
             this.partSaveButton.Text = "Save";
             this.partSaveButton.UseVisualStyleBackColor = true;
+            this.partSaveButton.Click += new System.EventHandler(this.partSaveButton_Click);
             // 
             // partCancelButton
             // 
@@ -157,6 +158,7 @@ namespace JustinTownleySoftwareI
             this.partCancelButton.TabIndex = 11;
             this.partCancelButton.Text = "Cancel";
             this.partCancelButton.UseVisualStyleBackColor = true;
+            this.partCancelButton.Click += new System.EventHandler(this.partCancelButton_Click);
             // 
             // partIDLabel
             // 
