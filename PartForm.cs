@@ -18,8 +18,14 @@ namespace JustinTownleySoftwareI
             if (Inventory.CurrentPartIndex == -1)
             {
                 InitializeComponent();
-                partIDTextBox.Text = "000";
+                partIDTextBox.Text = "Created when Saved";
                 inHouseRadioButton.Checked = true;
+                partNameTextBox.BackColor = System.Drawing.Color.Crimson;
+                partInventoryTextBox.BackColor = System.Drawing.Color.Crimson;
+                partPriceTextBox.BackColor = System.Drawing.Color.Crimson;
+                partMaxTextBox.BackColor = System.Drawing.Color.Crimson;
+                partMinTextBox.BackColor = System.Drawing.Color.Crimson;
+                partMachineCompanyTextBox.BackColor = System.Drawing.Color.Crimson;
             }
             //If modifying an existing part Inventory.CurrentPartIndex will have a value >=0
             else
@@ -50,6 +56,113 @@ namespace JustinTownleySoftwareI
 
             }
         }
-        
+
+        private void inHouseRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            isInhouse = true;
+            machineCompanyLabel.Text = "Machine ID";
+        }
+
+        private void outsourcedRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            isInhouse = false;
+            machineCompanyLabel.Text = "Company Name";
+        }
+
+        private void partNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(partNameTextBox.Text))
+            {
+                partNameTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                partNameTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void partInventoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int number;
+            if (string.IsNullOrWhiteSpace(partInventoryTextBox.Text) || 
+                (!Int32.TryParse(partInventoryTextBox.Text, out number)))
+            {
+                partInventoryTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                partInventoryTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void partPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            decimal number;
+            if (string.IsNullOrWhiteSpace(partPriceTextBox.Text) ||
+            (!Decimal.TryParse(partPriceTextBox.Text, out number)))
+            {
+                partPriceTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                partPriceTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void partMaxTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int number;
+            if (string.IsNullOrWhiteSpace(partMaxTextBox.Text) ||
+            (!Int32.TryParse(partMaxTextBox.Text, out number)))
+            {
+                partMaxTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                partMaxTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void partMinTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int number;
+            if (string.IsNullOrWhiteSpace(partMinTextBox.Text) ||
+            (!Int32.TryParse(partMinTextBox.Text, out number)))
+            {
+                partMinTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                partMinTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void partMachineCompanyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (isInhouse == true)
+            {
+                int number;
+                if (string.IsNullOrWhiteSpace(partMachineCompanyTextBox.Text) ||
+                (!Int32.TryParse(partMachineCompanyTextBox.Text, out number)))
+                {
+                    partMachineCompanyTextBox.BackColor = System.Drawing.Color.Crimson;
+                }
+                else
+                {
+                    partMachineCompanyTextBox.BackColor = System.Drawing.Color.White;
+                }
+            }
+            else
+            {
+                if (string.IsNullOrWhiteSpace(partMachineCompanyTextBox.Text))
+                {
+                    partMachineCompanyTextBox.BackColor = System.Drawing.Color.Crimson;
+                }
+                else
+                {
+                    partMachineCompanyTextBox.BackColor = System.Drawing.Color.White;
+                }
+            }
+        }
     }
 }

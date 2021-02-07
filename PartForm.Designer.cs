@@ -70,6 +70,7 @@ namespace JustinTownleySoftwareI
             this.inHouseRadioButton.TabStop = true;
             this.inHouseRadioButton.Text = "In-House";
             this.inHouseRadioButton.UseVisualStyleBackColor = true;
+            this.inHouseRadioButton.CheckedChanged += new System.EventHandler(this.inHouseRadioButton_CheckedChanged);
             // 
             // outsourcedRadioButton
             // 
@@ -81,11 +82,13 @@ namespace JustinTownleySoftwareI
             this.outsourcedRadioButton.TabStop = true;
             this.outsourcedRadioButton.Text = "Outsourced";
             this.outsourcedRadioButton.UseVisualStyleBackColor = true;
+            this.outsourcedRadioButton.CheckedChanged += new System.EventHandler(this.outsourcedRadioButton_CheckedChanged);
             // 
             // partIDTextBox
             // 
             this.partIDTextBox.Location = new System.Drawing.Point(190, 68);
             this.partIDTextBox.Name = "partIDTextBox";
+            this.partIDTextBox.ReadOnly = true;
             this.partIDTextBox.Size = new System.Drawing.Size(135, 23);
             this.partIDTextBox.TabIndex = 3;
             // 
@@ -95,6 +98,7 @@ namespace JustinTownleySoftwareI
             this.partNameTextBox.Name = "partNameTextBox";
             this.partNameTextBox.Size = new System.Drawing.Size(135, 23);
             this.partNameTextBox.TabIndex = 4;
+            this.partNameTextBox.TextChanged += new System.EventHandler(this.partNameTextBox_TextChanged);
             // 
             // partInventoryTextBox
             // 
@@ -102,6 +106,7 @@ namespace JustinTownleySoftwareI
             this.partInventoryTextBox.Name = "partInventoryTextBox";
             this.partInventoryTextBox.Size = new System.Drawing.Size(135, 23);
             this.partInventoryTextBox.TabIndex = 5;
+            this.partInventoryTextBox.TextChanged += new System.EventHandler(this.partInventoryTextBox_TextChanged);
             // 
             // partPriceTextBox
             // 
@@ -109,6 +114,7 @@ namespace JustinTownleySoftwareI
             this.partPriceTextBox.Name = "partPriceTextBox";
             this.partPriceTextBox.Size = new System.Drawing.Size(135, 23);
             this.partPriceTextBox.TabIndex = 6;
+            this.partPriceTextBox.TextChanged += new System.EventHandler(this.partPriceTextBox_TextChanged);
             // 
             // partMaxTextBox
             // 
@@ -116,6 +122,7 @@ namespace JustinTownleySoftwareI
             this.partMaxTextBox.Name = "partMaxTextBox";
             this.partMaxTextBox.Size = new System.Drawing.Size(70, 23);
             this.partMaxTextBox.TabIndex = 7;
+            this.partMaxTextBox.TextChanged += new System.EventHandler(this.partMaxTextBox_TextChanged);
             // 
             // partMachineCompanyTextBox
             // 
@@ -123,6 +130,7 @@ namespace JustinTownleySoftwareI
             this.partMachineCompanyTextBox.Name = "partMachineCompanyTextBox";
             this.partMachineCompanyTextBox.Size = new System.Drawing.Size(135, 23);
             this.partMachineCompanyTextBox.TabIndex = 8;
+            this.partMachineCompanyTextBox.TextChanged += new System.EventHandler(this.partMachineCompanyTextBox_TextChanged);
             // 
             // partMinTextBox
             // 
@@ -130,6 +138,7 @@ namespace JustinTownleySoftwareI
             this.partMinTextBox.Name = "partMinTextBox";
             this.partMinTextBox.Size = new System.Drawing.Size(70, 23);
             this.partMinTextBox.TabIndex = 9;
+            this.partMinTextBox.TextChanged += new System.EventHandler(this.partMinTextBox_TextChanged);
             // 
             // partSaveButton
             // 
