@@ -30,8 +30,8 @@ namespace JustinTownleySoftwareI
         private void InitializeComponent()
         {
             this.addModifyPartLabel = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.inHouseRadioButton = new System.Windows.Forms.RadioButton();
+            this.outsourcedRadioButton = new System.Windows.Forms.RadioButton();
             this.partIDTextBox = new System.Windows.Forms.TextBox();
             this.partNameTextBox = new System.Windows.Forms.TextBox();
             this.partInventoryTextBox = new System.Windows.Forms.TextBox();
@@ -60,27 +60,27 @@ namespace JustinTownleySoftwareI
             this.addModifyPartLabel.TabIndex = 0;
             this.addModifyPartLabel.Text = "Add Part";
             // 
-            // radioButton1
+            // inHouseRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(146, 18);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(74, 19);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "In-House";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.inHouseRadioButton.AutoSize = true;
+            this.inHouseRadioButton.Location = new System.Drawing.Point(146, 18);
+            this.inHouseRadioButton.Name = "inHouseRadioButton";
+            this.inHouseRadioButton.Size = new System.Drawing.Size(74, 19);
+            this.inHouseRadioButton.TabIndex = 1;
+            this.inHouseRadioButton.TabStop = true;
+            this.inHouseRadioButton.Text = "In-House";
+            this.inHouseRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // outsourcedRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(273, 18);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(87, 19);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Outsourced";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.outsourcedRadioButton.AutoSize = true;
+            this.outsourcedRadioButton.Location = new System.Drawing.Point(273, 18);
+            this.outsourcedRadioButton.Name = "outsourcedRadioButton";
+            this.outsourcedRadioButton.Size = new System.Drawing.Size(87, 19);
+            this.outsourcedRadioButton.TabIndex = 2;
+            this.outsourcedRadioButton.TabStop = true;
+            this.outsourcedRadioButton.Text = "Outsourced";
+            this.outsourcedRadioButton.UseVisualStyleBackColor = true;
             // 
             // partIDTextBox
             // 
@@ -193,7 +193,7 @@ namespace JustinTownleySoftwareI
             // partMaxLabel
             // 
             this.partMaxLabel.AutoSize = true;
-            this.partMaxLabel.Location = new System.Drawing.Point(122, 288);
+            this.partMaxLabel.Location = new System.Drawing.Point(122, 285);
             this.partMaxLabel.Name = "partMaxLabel";
             this.partMaxLabel.Size = new System.Drawing.Size(30, 15);
             this.partMaxLabel.TabIndex = 16;
@@ -213,14 +213,14 @@ namespace JustinTownleySoftwareI
             // machineCompanyLabel
             // 
             this.machineCompanyLabel.AutoSize = true;
-            this.machineCompanyLabel.Location = new System.Drawing.Point(122, 348);
+            this.machineCompanyLabel.Location = new System.Drawing.Point(85, 348);
             this.machineCompanyLabel.Name = "machineCompanyLabel";
             this.machineCompanyLabel.Size = new System.Drawing.Size(67, 15);
             this.machineCompanyLabel.TabIndex = 18;
             this.machineCompanyLabel.Text = "Machine ID";
             this.machineCompanyLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // Part
+            // PartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -241,10 +241,10 @@ namespace JustinTownleySoftwareI
             this.Controls.Add(this.partInventoryTextBox);
             this.Controls.Add(this.partNameTextBox);
             this.Controls.Add(this.partIDTextBox);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.outsourcedRadioButton);
+            this.Controls.Add(this.inHouseRadioButton);
             this.Controls.Add(this.addModifyPartLabel);
-            this.Name = "Part";
+            this.Name = "PartForm";
             this.Text = "Part";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,8 +254,8 @@ namespace JustinTownleySoftwareI
         #endregion
 
         private System.Windows.Forms.Label addModifyPartLabel;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton inHouseRadioButton;
+        private System.Windows.Forms.RadioButton outsourcedRadioButton;
         private System.Windows.Forms.TextBox partIDTextBox;
         private System.Windows.Forms.TextBox partNameTextBox;
         private System.Windows.Forms.TextBox partInventoryTextBox;

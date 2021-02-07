@@ -27,11 +27,10 @@ namespace JustinTownleySoftwareI
             Products.Add(product);
         }
         
-        //The UML Class Diagram indicated this function to 
-        //have a bool return type and I saw no reason for this so I changed it to void
-        public static void removeProduct(int i)
+        public static bool removeProduct(int i)
         {
             Products.RemoveAt(i);
+            return true;
         }
 
         public static Product lookupProduct(int i)
@@ -59,11 +58,10 @@ namespace JustinTownleySoftwareI
             AllParts.Add(part);
         }
 
-        //The UML Class Diagram indicated this function to 
-        //have a bool return type and I saw no reason for this so I changed it to void
-        public static void deletePart(int i)
+        public static bool deletePart(int i)
         {
             AllParts.RemoveAt(i);
+            return true;
         }
 
         public static Part lookupPart(int i)

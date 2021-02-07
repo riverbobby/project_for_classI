@@ -61,22 +61,28 @@ namespace JustinTownleySoftwareI
             // 
             // partsDGV
             // 
+            this.partsDGV.AllowUserToAddRows = false;
+            this.partsDGV.AllowUserToDeleteRows = false;
             this.partsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.partsDGV.Location = new System.Drawing.Point(37, 89);
+            this.partsDGV.Location = new System.Drawing.Point(51, 92);
             this.partsDGV.Name = "partsDGV";
+            this.partsDGV.ReadOnly = true;
             this.partsDGV.RowTemplate.Height = 25;
             this.partsDGV.Size = new System.Drawing.Size(582, 345);
-            this.partsDGV.TabIndex = 1;
+            this.partsDGV.TabIndex = 0;
             this.partsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.partsDGV_CellClick);
             // 
             // productDGV
             // 
+            this.productDGV.AllowUserToAddRows = false;
+            this.productDGV.AllowUserToDeleteRows = false;
             this.productDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDGV.Location = new System.Drawing.Point(668, 89);
             this.productDGV.Name = "productDGV";
+            this.productDGV.ReadOnly = true;
             this.productDGV.RowTemplate.Height = 25;
             this.productDGV.Size = new System.Drawing.Size(582, 345);
-            this.productDGV.TabIndex = 2;
+            this.productDGV.TabIndex = 0;
             this.productDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDGV_CellClick);
             // 
             // searchPartTextBox

@@ -177,6 +177,7 @@ namespace JustinTownleySoftwareI
             this.searchAvailablePartsButton.TabIndex = 31;
             this.searchAvailablePartsButton.Text = "Search";
             this.searchAvailablePartsButton.UseVisualStyleBackColor = true;
+            this.searchAvailablePartsButton.Click += new System.EventHandler(this.searchAvailablePartsButton_Click);
             // 
             // searchAvailablePartTextBox
             // 
@@ -193,6 +194,7 @@ namespace JustinTownleySoftwareI
             this.productCancelButton.TabIndex = 33;
             this.productCancelButton.Text = "Cancel";
             this.productCancelButton.UseVisualStyleBackColor = true;
+            this.productCancelButton.Click += new System.EventHandler(this.productCancelButton_Click);
             // 
             // productSaveButton
             // 
@@ -211,6 +213,7 @@ namespace JustinTownleySoftwareI
             this.deletePartProductButton.TabIndex = 34;
             this.deletePartProductButton.Text = "Delete";
             this.deletePartProductButton.UseVisualStyleBackColor = true;
+            this.deletePartProductButton.Click += new System.EventHandler(this.deletePartProductButton_Click);
             // 
             // addPartProductButton
             // 
@@ -220,24 +223,33 @@ namespace JustinTownleySoftwareI
             this.addPartProductButton.TabIndex = 35;
             this.addPartProductButton.Text = "Add";
             this.addPartProductButton.UseVisualStyleBackColor = true;
+            this.addPartProductButton.Click += new System.EventHandler(this.addPartProductButton_Click);
             // 
             // availablePartDGV
             // 
+            this.availablePartDGV.AllowUserToAddRows = false;
+            this.availablePartDGV.AllowUserToDeleteRows = false;
             this.availablePartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.availablePartDGV.Location = new System.Drawing.Point(404, 90);
             this.availablePartDGV.Name = "availablePartDGV";
+            this.availablePartDGV.ReadOnly = true;
             this.availablePartDGV.RowTemplate.Height = 25;
             this.availablePartDGV.Size = new System.Drawing.Size(535, 184);
-            this.availablePartDGV.TabIndex = 36;
+            this.availablePartDGV.TabIndex = 0;
+            this.availablePartDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.availablePartDGV_CellClick);
             // 
             // associatedPartDGV
             // 
+            this.associatedPartDGV.AllowUserToAddRows = false;
+            this.associatedPartDGV.AllowUserToDeleteRows = false;
             this.associatedPartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.associatedPartDGV.Location = new System.Drawing.Point(404, 346);
             this.associatedPartDGV.Name = "associatedPartDGV";
+            this.associatedPartDGV.ReadOnly = true;
             this.associatedPartDGV.RowTemplate.Height = 25;
             this.associatedPartDGV.Size = new System.Drawing.Size(535, 184);
-            this.associatedPartDGV.TabIndex = 37;
+            this.associatedPartDGV.TabIndex = 0;
+            this.associatedPartDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.associatedPartDGV_CellClick);
             // 
             // candidatePartLabel
             // 
@@ -257,7 +269,7 @@ namespace JustinTownleySoftwareI
             this.paroductPartListLabel.TabIndex = 39;
             this.paroductPartListLabel.Text = "Parts Associated with the Product";
             // 
-            // Product
+            // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -285,7 +297,7 @@ namespace JustinTownleySoftwareI
             this.Controls.Add(this.productNameTextBox);
             this.Controls.Add(this.productIDTextBox);
             this.Controls.Add(this.addModifyProductLabel);
-            this.Name = "Product";
+            this.Name = "ProductForm";
             this.Text = "AddModifyProduct";
             ((System.ComponentModel.ISupportInitialize)(this.availablePartDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.associatedPartDGV)).EndInit();
