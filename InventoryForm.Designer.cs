@@ -43,6 +43,8 @@ namespace JustinTownleySoftwareI
             this.modifyProductButton = new System.Windows.Forms.Button();
             this.addProductButton = new System.Windows.Forms.Button();
             this.exitProgramButton = new System.Windows.Forms.Button();
+            this.partsLabel = new System.Windows.Forms.Label();
+            this.productsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.partsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDGV)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +67,7 @@ namespace JustinTownleySoftwareI
             this.partsDGV.RowTemplate.Height = 25;
             this.partsDGV.Size = new System.Drawing.Size(582, 345);
             this.partsDGV.TabIndex = 1;
+            this.partsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.partsDGV_CellClick);
             // 
             // productDGV
             // 
@@ -74,6 +77,7 @@ namespace JustinTownleySoftwareI
             this.productDGV.RowTemplate.Height = 25;
             this.productDGV.Size = new System.Drawing.Size(582, 345);
             this.productDGV.TabIndex = 2;
+            this.productDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDGV_CellClick);
             // 
             // searchPartTextBox
             // 
@@ -97,6 +101,7 @@ namespace JustinTownleySoftwareI
             this.searchPartsButton.TabIndex = 5;
             this.searchPartsButton.Text = "Search";
             this.searchPartsButton.UseVisualStyleBackColor = true;
+            this.searchPartsButton.Click += new System.EventHandler(this.searchPartsButton_Click);
             // 
             // searchProductButton
             // 
@@ -106,6 +111,7 @@ namespace JustinTownleySoftwareI
             this.searchProductButton.TabIndex = 6;
             this.searchProductButton.Text = "Search";
             this.searchProductButton.UseVisualStyleBackColor = true;
+            this.searchProductButton.Click += new System.EventHandler(this.searchProductButton_Click);
             // 
             // addPartButton
             // 
@@ -115,6 +121,7 @@ namespace JustinTownleySoftwareI
             this.addPartButton.TabIndex = 7;
             this.addPartButton.Text = "Add";
             this.addPartButton.UseVisualStyleBackColor = true;
+            this.addPartButton.Click += new System.EventHandler(this.addPartButton_Click);
             // 
             // modifyPartButton
             // 
@@ -124,6 +131,7 @@ namespace JustinTownleySoftwareI
             this.modifyPartButton.TabIndex = 8;
             this.modifyPartButton.Text = "Modify";
             this.modifyPartButton.UseVisualStyleBackColor = true;
+            this.modifyPartButton.Click += new System.EventHandler(this.modifyPartButton_Click);
             // 
             // deletePartButton
             // 
@@ -133,6 +141,7 @@ namespace JustinTownleySoftwareI
             this.deletePartButton.TabIndex = 9;
             this.deletePartButton.Text = "Delete";
             this.deletePartButton.UseVisualStyleBackColor = true;
+            this.deletePartButton.Click += new System.EventHandler(this.deletePartButton_Click);
             // 
             // deleteProductButton
             // 
@@ -142,6 +151,7 @@ namespace JustinTownleySoftwareI
             this.deleteProductButton.TabIndex = 10;
             this.deleteProductButton.Text = "Delete";
             this.deleteProductButton.UseVisualStyleBackColor = true;
+            this.deleteProductButton.Click += new System.EventHandler(this.deleteProductButton_Click);
             // 
             // modifyProductButton
             // 
@@ -151,6 +161,7 @@ namespace JustinTownleySoftwareI
             this.modifyProductButton.TabIndex = 11;
             this.modifyProductButton.Text = "Modify";
             this.modifyProductButton.UseVisualStyleBackColor = true;
+            this.modifyProductButton.Click += new System.EventHandler(this.modifyProductButton_Click);
             // 
             // addProductButton
             // 
@@ -160,6 +171,7 @@ namespace JustinTownleySoftwareI
             this.addProductButton.TabIndex = 12;
             this.addProductButton.Text = "Add";
             this.addProductButton.UseVisualStyleBackColor = true;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
             // 
             // exitProgramButton
             // 
@@ -169,12 +181,35 @@ namespace JustinTownleySoftwareI
             this.exitProgramButton.TabIndex = 13;
             this.exitProgramButton.Text = "Exit";
             this.exitProgramButton.UseVisualStyleBackColor = true;
+            this.exitProgramButton.Click += new System.EventHandler(this.exitProgramButton_Click);
+            // 
+            // partsLabel
+            // 
+            this.partsLabel.AutoSize = true;
+            this.partsLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.partsLabel.Location = new System.Drawing.Point(37, 68);
+            this.partsLabel.Name = "partsLabel";
+            this.partsLabel.Size = new System.Drawing.Size(48, 21);
+            this.partsLabel.TabIndex = 14;
+            this.partsLabel.Text = "Parts";
+            // 
+            // productsLabel
+            // 
+            this.productsLabel.AutoSize = true;
+            this.productsLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.productsLabel.Location = new System.Drawing.Point(668, 65);
+            this.productsLabel.Name = "productsLabel";
+            this.productsLabel.Size = new System.Drawing.Size(77, 21);
+            this.productsLabel.TabIndex = 15;
+            this.productsLabel.Text = "Products";
             // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 580);
+            this.Controls.Add(this.productsLabel);
+            this.Controls.Add(this.partsLabel);
             this.Controls.Add(this.exitProgramButton);
             this.Controls.Add(this.addProductButton);
             this.Controls.Add(this.modifyProductButton);
@@ -214,6 +249,8 @@ namespace JustinTownleySoftwareI
         private System.Windows.Forms.Button modifyProductButton;
         private System.Windows.Forms.Button addProductButton;
         private System.Windows.Forms.Button exitProgramButton;
+        private System.Windows.Forms.Label partsLabel;
+        private System.Windows.Forms.Label productsLabel;
     }
 }
 

@@ -18,7 +18,55 @@ namespace JustinTownleySoftwareI
 
             partsDGV.DataSource = Inventory.AllParts;
         }
+        private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        
+        }
+        private void addPartButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void modifyPartButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void deletePartButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchPartsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void productDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void addProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modifyProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void searchProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitProgramButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
