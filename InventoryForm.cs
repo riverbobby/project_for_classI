@@ -174,7 +174,7 @@ namespace JustinTownleySoftwareI
 
         private void exitProgramButton_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
     }
