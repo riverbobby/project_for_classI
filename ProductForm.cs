@@ -227,8 +227,16 @@ namespace JustinTownleySoftwareI
 
         private void addPartProductButton_Click(object sender, EventArgs e)
         {
-            temp.addAssociatedPart(Inventory.CurrentPart);
-            associatedPartDGV.DataSource = temp.AssociatedParts;
+            if (Inventory.CurrentPartIndex >= 0)
+            {
+                temp.addAssociatedPart(Inventory.CurrentPart);
+                associatedPartDGV.DataSource = temp.AssociatedParts;
+            }
+            else
+            {
+                MessageBox.Show("Please select a part to add");
+            }
+            
         }
 
         private void searchAvailablePartsButton_Click(object sender, EventArgs e)
