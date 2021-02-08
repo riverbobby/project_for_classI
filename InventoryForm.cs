@@ -29,6 +29,8 @@ namespace JustinTownleySoftwareI
             productDGV.DefaultCellStyle.SelectionForeColor = productDGV.DefaultCellStyle.ForeColor;
             productDGV.RowHeadersVisible = false;
             productDGV.DataSource = Inventory.Products;
+            DataGridViewBand band = productDGV.Columns[0];
+            band.Visible = false;
         }
 
         private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -19,6 +19,7 @@ namespace JustinTownleySoftwareI
             {
                 InitializeComponent();
                 Inventory.CurrentPartIndex = -1;
+                Inventory.CurrentAssociatedPartIndex = -1;
                 //BindingList<Part> tempAssociatedParts = new BindingList<Part>();
                 //formatting for availablePartDGV
                 availablePartDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

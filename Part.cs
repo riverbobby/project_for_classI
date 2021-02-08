@@ -13,8 +13,8 @@ namespace JustinTownleySoftwareI
         public int Min { get; set; }
         public int Max { get; set; }
 
-        //value set at 5 to include pre-initialized Parts in Program.cs
-        public static int partCount = 5;
+        
+        public static int partCount = 0;
 
         public Part(string n, decimal p, int inStock, int min, int max)
         {
