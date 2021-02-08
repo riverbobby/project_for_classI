@@ -7,9 +7,9 @@ namespace JustinTownleySoftwareI
 {
     class Product
     {
-        public BindingList<Part> associatedParts = new BindingList<Part>();
+        private BindingList<Part> associatedParts = new BindingList<Part>();
 
-        public Part AssociatedParts { get; set; }
+        public BindingList<Part> AssociatedParts { get {return associatedParts; } set { associatedParts = value; } }
         public int ProductID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -35,7 +35,7 @@ namespace JustinTownleySoftwareI
             Max = max;
         }
         //constructor for new products
-        public Product(Part parts, string n, decimal p, int inStock, int min, int max)
+        public Product(BindingList<Part> parts, string n, decimal p, int inStock, int min, int max)
         {
             AssociatedParts = parts;
             ProductID = ++productCount;
@@ -46,7 +46,7 @@ namespace JustinTownleySoftwareI
             Max = max;
         }
         //constructor for modified products
-        public Product(Part parts, int pID, string n, decimal p, int inStock, int min, int max)
+        public Product(BindingList<Part> parts, int pID, string n, decimal p, int inStock, int min, int max)
         {
             AssociatedParts = parts;
             ProductID = pID;

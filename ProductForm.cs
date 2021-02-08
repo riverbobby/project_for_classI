@@ -45,8 +45,24 @@ namespace JustinTownleySoftwareI
                 availablePartDGV.DefaultCellStyle.SelectionForeColor = availablePartDGV.DefaultCellStyle.ForeColor;
                 availablePartDGV.RowHeadersVisible = false;
                 availablePartDGV.DataSource = Inventory.AllParts;
+                //formatting for associatedPartDGV
+                temp = Inventory.CurrentProduct;
+                associatedPartDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                associatedPartDGV.DefaultCellStyle.SelectionBackColor = associatedPartDGV.DefaultCellStyle.BackColor;
+                associatedPartDGV.DefaultCellStyle.SelectionForeColor = associatedPartDGV.DefaultCellStyle.ForeColor;
+                associatedPartDGV.RowHeadersVisible = false;
+                associatedPartDGV.DataSource = temp.AssociatedParts;
+                //formatting for textboxes
+                //populating textboxes
+                productIDTextBox.Text = temp.ProductID.ToString();
+                productNameTextBox.Text = temp.Name;
+                productInventoryTextBox.Text = temp.InStock.ToString();
+                productPriceTextBox.Text = temp.Price.ToString();
+                productMaxTextBox.Text = temp.Max.ToString();
+                productMinTextBox.Text = temp.Min.ToString();
+
             }
-            
+
         }
 
         private void partSaveButton_Click(object sender, EventArgs e)

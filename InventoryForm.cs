@@ -29,8 +29,8 @@ namespace JustinTownleySoftwareI
             productDGV.DefaultCellStyle.SelectionForeColor = productDGV.DefaultCellStyle.ForeColor;
             productDGV.RowHeadersVisible = false;
             productDGV.DataSource = Inventory.Products;
-            DataGridViewBand band = productDGV.Columns[0];
-            band.Visible = false;
+            //DataGridViewBand band = productDGV.Columns[0];
+            //band.Visible = false;
         }
 
         private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -88,7 +88,7 @@ namespace JustinTownleySoftwareI
         private void productDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Inventory.CurrentProductIndex = e.RowIndex;
-            Inventory.CurrentProductID = (int)productDGV.Rows[Inventory.CurrentProductIndex].Cells[1].Value;
+            Inventory.CurrentProductID = (int)productDGV.Rows[Inventory.CurrentProductIndex].Cells[0].Value;
             Inventory.CurrentProduct = Inventory.lookupProduct(Inventory.CurrentProductID);
             productDGV.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Green;
 

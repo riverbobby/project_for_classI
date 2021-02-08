@@ -166,6 +166,7 @@ namespace JustinTownleySoftwareI
             // 
             this.productIDTextBox.Location = new System.Drawing.Point(129, 180);
             this.productIDTextBox.Name = "productIDTextBox";
+            this.productIDTextBox.ReadOnly = true;
             this.productIDTextBox.Size = new System.Drawing.Size(135, 23);
             this.productIDTextBox.TabIndex = 18;
             // 

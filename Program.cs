@@ -24,8 +24,8 @@ namespace JustinTownleySoftwareI
             Inventory.Products[0].addAssociatedPart(Inventory.AllParts[1]);
             Inventory.Products[0].addAssociatedPart(Inventory.AllParts[0]);
             Inventory.Products.Add(new Product("BMX", 102.35m, 4, 2, 10));
-            Inventory.Products[0].addAssociatedPart(Inventory.AllParts[4]);
-            Inventory.Products[0].addAssociatedPart(Inventory.AllParts[3]);
+            Inventory.Products[1].addAssociatedPart(Inventory.AllParts[4]);
+            Inventory.Products[1].addAssociatedPart(Inventory.AllParts[3]);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
