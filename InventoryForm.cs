@@ -83,7 +83,29 @@ namespace JustinTownleySoftwareI
 
         private void searchPartsButton_Click(object sender, EventArgs e)
         {
-
+            partsDGV.ClearSelection();
+            partsDGV.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            bool found = false;
+            if (searchPartTextBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.AllParts.Count; i++)
+                {
+                    if (Inventory.AllParts[i].Name.ToUpper().Contains(searchPartTextBox.Text.ToUpper()))
+                    {
+                        partsDGV.Rows[i].Selected = true;
+                        found = true;
+                    }
+                }
+                if (!found)
+                {
+                    MessageBox.Show("Nothing found");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a part name to search");
+            }
         }
         private void productDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -125,7 +147,29 @@ namespace JustinTownleySoftwareI
         }
         private void searchProductButton_Click(object sender, EventArgs e)
         {
-
+            productDGV.ClearSelection();
+            productDGV.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            bool found = false;
+            if (searchProductTextBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.Products.Count; i++)
+                {
+                    if (Inventory.Products[i].Name.ToUpper().Contains(searchProductTextBox.Text.ToUpper()))
+                    {
+                        productDGV.Rows[i].Selected = true;
+                        found = true;
+                    }
+                }
+                if (!found)
+                {
+                    MessageBox.Show("Nothing found");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a product name to search");
+            }
         }
 
         private void exitProgramButton_Click(object sender, EventArgs e)

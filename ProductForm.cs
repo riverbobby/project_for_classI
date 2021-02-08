@@ -233,6 +233,29 @@ namespace JustinTownleySoftwareI
 
         private void searchAvailablePartsButton_Click(object sender, EventArgs e)
         {
+            availablePartDGV.ClearSelection();
+            availablePartDGV.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            bool found = false;
+            if (searchAvailablePartTextBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.AllParts.Count; i++)
+                {
+                    if (Inventory.AllParts[i].Name.ToUpper().Contains(searchAvailablePartTextBox.Text.ToUpper()))
+                    {
+                        availablePartDGV.Rows[i].Selected = true;
+                        found = true;
+                    }
+                }
+                if (!found)
+                {
+                    MessageBox.Show("Nothing found");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a part name to search");
+            }
 
         }
 
