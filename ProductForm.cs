@@ -73,11 +73,97 @@ namespace JustinTownleySoftwareI
 
         }
 
-        private void partSaveButton_Click(object sender, EventArgs e)
+        private void productSaveButton_Click(object sender, EventArgs e)
         {
-
+            string messageBuilder = "Please fix the following issues:\n";
+            bool invalid = false;
+            decimal numberDecimal;
+            int numberMin = -2;
+            int numberMax = -3;
+            int numberInventory;
+            //checking each field for validation
+            //name
+            if (string.IsNullOrWhiteSpace(productNameTextBox.Text))
+            {
+                invalid = true;
+                messageBuilder += "Please enter a product name\n";
+            }
+            //price
+            if (string.IsNullOrWhiteSpace(productPriceTextBox.Text) ||
+            (!Decimal.TryParse(productPriceTextBox.Text, out numberDecimal)))
+            {
+                invalid = true;
+                messageBuilder += "Please enter a valid price\n";
+            }
+            //min
+            if (string.IsNullOrWhiteSpace(productMinTextBox.Text))
+            {
+                invalid = true;
+                messageBuilder += "Please enter a min value\n";
+            }
+            else
+            {
+                if (!Int32.TryParse(productMinTextBox.Text, out numberMin))
+                {
+                    invalid = true;
+                    messageBuilder += "Please enter a valid min value\n";
+                }
+            }
+            //max
+            if (string.IsNullOrWhiteSpace(productMaxTextBox.Text))
+            {
+                invalid = true;
+                messageBuilder += "Please enter a max value\n";
+            }
+            else
+            {
+                if (!Int32.TryParse(productMaxTextBox.Text, out numberMax))
+                {
+                    invalid = true;
+                    messageBuilder += "Please enter a valid min value\n";
+                }
+                else
+                {
+                    if (numberMax < numberMin)
+                    {
+                        invalid = true;
+                        messageBuilder += "Please enter a max value greater than min value\n";
+                    }
+                }
+            }
+            //instock
+            if (string.IsNullOrWhiteSpace(productInventoryTextBox.Text))
+            {
+                invalid = true;
+                messageBuilder += "Please enter a inventory value\n";
+            }
+            else
+            {
+                if (!Int32.TryParse(productInventoryTextBox.Text, out numberInventory))
+                {
+                    invalid = true;
+                    messageBuilder += "Please enter a valid inventory number value\n";
+                }
+                else
+                {
+                    if (numberInventory < numberMin || numberInventory > numberMax)
+                    {
+                        invalid = true;
+                        messageBuilder += "Please enter an inventory number between min and max\n";
+                    }
+                }
+            }
+            //invalid path with messageBox
+            if (invalid == true)
+            {
+                MessageBox.Show(messageBuilder);
+            }
+            else
+            {
+                MessageBox.Show("building as new Product");
+            }
+            
         }
-
         private void productCancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -200,5 +286,7 @@ namespace JustinTownleySoftwareI
                 productMinTextBox.BackColor = System.Drawing.Color.White;
             }
         }
+
+        
     }
 }

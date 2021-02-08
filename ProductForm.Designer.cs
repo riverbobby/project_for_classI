@@ -210,6 +210,7 @@ namespace JustinTownleySoftwareI
             this.productSaveButton.TabIndex = 32;
             this.productSaveButton.Text = "Save";
             this.productSaveButton.UseVisualStyleBackColor = true;
+            this.productSaveButton.Click += new System.EventHandler(this.productSaveButton_Click);
             // 
             // deletePartProductButton
             // 
