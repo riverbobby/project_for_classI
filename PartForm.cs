@@ -61,6 +61,16 @@ namespace JustinTownleySoftwareI
         {
             isInhouse = true;
             machineCompanyLabel.Text = "Machine ID";
+            int number;
+            if (string.IsNullOrWhiteSpace(partMachineCompanyTextBox.Text) ||
+                (!Int32.TryParse(partMachineCompanyTextBox.Text, out number)))
+            {
+                partMachineCompanyTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                partMachineCompanyTextBox.BackColor = System.Drawing.Color.White;
+            }
         }
 
         private void outsourcedRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -254,13 +264,13 @@ namespace JustinTownleySoftwareI
                     messageBuilder += "Please enter a Machine ID\n";
                  }
                  else
-                {
-                     if (!Int32.TryParse(partInventoryTextBox.Text, out numberMachineID))
+                 {
+                     if (!Int32.TryParse(partMachineCompanyTextBox.Text, out numberMachineID))
                      {
                         invalid = true;
                         messageBuilder += "Please enter a number in Machine ID";
                      }
-                }
+                 }
             }
             else
             {
@@ -282,18 +292,55 @@ namespace JustinTownleySoftwareI
                 //constructor called for new part and new part assigned to AllParts
                 if (Inventory.CurrentPartIndex < 0)
                 {
-                    //for testing
-                    MessageBox.Show("New Part Constructor Called");
+                    if (isInhouse == true)
+                    {
+                        Inventory.addPart(new Inhouse(partNameTextBox.Text,
+                            Decimal.Parse(partPriceTextBox.Text),
+                            Int32.Parse(partInventoryTextBox.Text),
+                            Int32.Parse(partMinTextBox.Text),
+                            Int32.Parse(partMaxTextBox.Text),
+                            Int32.Parse(partMachineCompanyTextBox.Text)));
+                    }
+                    else
+                    {
+                        Inventory.addPart(new Outsourced(partNameTextBox.Text,
+                            Decimal.Parse(partPriceTextBox.Text),
+                            Int32.Parse(partInventoryTextBox.Text),
+                            Int32.Parse(partMinTextBox.Text),
+                            Int32.Parse(partMaxTextBox.Text),
+                            partMachineCompanyTextBox.Text));
+                    }
+                    
                 }
                 //constructor called for existing part and swapped for unmodified part in AllParts
                 else
                 {
-                    //for testing
-                    MessageBox.Show("Existing New Part Constructor Called");
+                    if (isInhouse == true)
+                    {
+                        Inventory.updatePart(Inventory.CurrentPartIndex,
+                            new Inhouse(Int32.Parse(partIDTextBox.Text),
+                            partNameTextBox.Text,
+                            Decimal.Parse(partPriceTextBox.Text),
+                            Int32.Parse(partInventoryTextBox.Text),
+                            Int32.Parse(partMinTextBox.Text),
+                            Int32.Parse(partMaxTextBox.Text),
+                            Int32.Parse(partMachineCompanyTextBox.Text)));
+                    }
+                    else
+                    {
+                        Inventory.updatePart(Inventory.CurrentPartIndex, 
+                            new Outsourced(Int32.Parse(partIDTextBox.Text),
+                            partNameTextBox.Text,
+                            Decimal.Parse(partPriceTextBox.Text),
+                            Int32.Parse(partInventoryTextBox.Text),
+                            Int32.Parse(partMinTextBox.Text),
+                            Int32.Parse(partMaxTextBox.Text),
+                            partMachineCompanyTextBox.Text));
+                    }
                 }
-                //this.Hide();
-                //InventoryForm inventoryForm = new InventoryForm();
-                //inventoryForm.Show();
+                this.Hide();
+                InventoryForm inventoryForm = new InventoryForm();
+                inventoryForm.Show();
             }
         }
 
