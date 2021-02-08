@@ -102,7 +102,9 @@ namespace JustinTownleySoftwareI
 
         private void modifyProductButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            ProductForm productForm = new ProductForm();
+            productForm.Show();
         }
         //Since a product cannot be added that does not have associated parts
         //and an product cannot be modified to have no associated parts

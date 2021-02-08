@@ -12,11 +12,13 @@ namespace JustinTownleySoftwareI
 
         public static BindingList<Product> Products { get { return products; } set { products = value; } }
         public static BindingList<Part> AllParts { get { return allParts; } set { allParts = value; } }
-        
         //global static variables
         public static Part CurrentPart { get; set; }
         public static int CurrentPartID { get; set; }
         public static int CurrentPartIndex { get; set; }
+        public static Part CurrentAssociatedPart { get; set; }
+        public static int CurrentAssociatedPartID { get; set; }
+        public static int CurrentAssociatedPartIndex { get; set; }
         public static Product CurrentProduct { get; set; }
         public static int CurrentProductID { get; set; }
         public static int CurrentProductIndex { get; set; }

@@ -15,7 +15,7 @@ namespace JustinTownleySoftwareI
         public PartForm()
         {
             //If adding a new part Inventory.CurrentPartIndex will be -1
-            if (Inventory.CurrentPartIndex == -1)
+            if (Inventory.CurrentPartIndex < 0)
             {
                 InitializeComponent();
                 partIDTextBox.Text = "Created when Saved";
