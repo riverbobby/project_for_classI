@@ -24,7 +24,8 @@ namespace JustinTownleySoftwareI
         {
 
         }
-        //constructor for pre-populated products
+        //constructor for pre-populated products and new products.
+        //AssociatedParts are added after the product is created.
         public Product(string n, decimal p, int inStock, int min, int max)
         {
             ProductID = ++productCount;
@@ -34,21 +35,9 @@ namespace JustinTownleySoftwareI
             Min = min;
             Max = max;
         }
-        //constructor for new products
-        //public Product(BindingList<Part> parts, string n, decimal p, int inStock, int min, int max)
-        //{
-        //    AssociatedParts = parts;
-        //    ProductID = ++productCount;
-        //    Name = n;
-        //    Price = p;
-        //    InStock = inStock;
-        //    Min = min;
-        //    Max = max;
-        //}
-        //constructor for modified products
-        public Product(/*BindingList<Part> parts, */int pID, string n, decimal p, int inStock, int min, int max)
+        //constructor for modified products. AssociatedParts are added in the add/modify Product form.
+        public Product(int pID, string n, decimal p, int inStock, int min, int max)
         {
-            //AssociatedParts = parts;
             ProductID = pID;
             Name = n;
             Price = p;

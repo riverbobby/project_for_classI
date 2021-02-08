@@ -21,6 +21,7 @@ namespace JustinTownleySoftwareI
             Inventory.AllParts.Add(new Outsourced("Chain", 5.82m, 4, 2, 7, "Madagar"));
             Inventory.AllParts.Add(new Inhouse("Seat", 9.42m, 4, 2, 7, 40444));
             Inventory.Products.Add(new Product("Huffy", 67.45m, 3, 1, 8));
+            //pre-population of two products for testing
             Inventory.Products[0].addAssociatedPart(Inventory.AllParts[1]);
             Inventory.Products[0].addAssociatedPart(Inventory.AllParts[0]);
             Inventory.Products.Add(new Product("BMX", 102.35m, 4, 2, 10));

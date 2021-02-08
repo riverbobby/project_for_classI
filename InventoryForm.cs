@@ -15,22 +15,20 @@ namespace JustinTownleySoftwareI
         public InventoryForm()
         {
             InitializeComponent();
-
+            //partsDVG formatting
             Inventory.CurrentPartIndex = -1;
             partsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             partsDGV.DefaultCellStyle.SelectionBackColor = partsDGV.DefaultCellStyle.BackColor;
             partsDGV.DefaultCellStyle.SelectionForeColor = partsDGV.DefaultCellStyle.ForeColor;
             partsDGV.RowHeadersVisible = false;
             partsDGV.DataSource = Inventory.AllParts;
-
+            //productDVG formatting
             Inventory.CurrentProductIndex = -1;
             productDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             productDGV.DefaultCellStyle.SelectionBackColor = productDGV.DefaultCellStyle.BackColor;
             productDGV.DefaultCellStyle.SelectionForeColor = productDGV.DefaultCellStyle.ForeColor;
             productDGV.RowHeadersVisible = false;
             productDGV.DataSource = Inventory.Products;
-            //DataGridViewBand band = productDGV.Columns[0];
-            //band.Visible = false;
         }
 
         private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)

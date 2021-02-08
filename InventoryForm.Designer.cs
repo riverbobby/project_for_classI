@@ -193,7 +193,7 @@ namespace JustinTownleySoftwareI
             // 
             this.partsLabel.AutoSize = true;
             this.partsLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.partsLabel.Location = new System.Drawing.Point(37, 68);
+            this.partsLabel.Location = new System.Drawing.Point(51, 68);
             this.partsLabel.Name = "partsLabel";
             this.partsLabel.Size = new System.Drawing.Size(48, 21);
             this.partsLabel.TabIndex = 14;

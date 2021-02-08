@@ -13,14 +13,11 @@ namespace JustinTownleySoftwareI
         Product temp = new Product();
         public ProductForm()
         {
-            //BindingList<Part> tempAssociatedParts = new BindingList<Part>();
-            //If adding a new product Inventory.CurrentPartIndex will be -1
             if (Inventory.CurrentProductIndex < 0) 
             {
                 InitializeComponent();
                 Inventory.CurrentPartIndex = -1;
                 Inventory.CurrentAssociatedPartIndex = -1;
-                //BindingList<Part> tempAssociatedParts = new BindingList<Part>();
                 //formatting for availablePartDGV
                 availablePartDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 availablePartDGV.DefaultCellStyle.SelectionBackColor = availablePartDGV.DefaultCellStyle.BackColor;
@@ -31,6 +28,7 @@ namespace JustinTownleySoftwareI
                 associatedPartDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 associatedPartDGV.DefaultCellStyle.SelectionBackColor = associatedPartDGV.DefaultCellStyle.BackColor;
                 associatedPartDGV.DefaultCellStyle.SelectionForeColor = associatedPartDGV.DefaultCellStyle.ForeColor;
+                associatedPartDGV.RowHeadersVisible = false;
                 associatedPartDGV.DataSource = temp.AssociatedParts;
                 //formatting for textboxes
                 productIDTextBox.Text = "Created when Saved";
@@ -50,17 +48,17 @@ namespace JustinTownleySoftwareI
                 availablePartDGV.DefaultCellStyle.SelectionForeColor = availablePartDGV.DefaultCellStyle.ForeColor;
                 availablePartDGV.RowHeadersVisible = false;
                 availablePartDGV.DataSource = Inventory.AllParts;
-                //formatting for associatedPartDGV
+                //populating temp.AssociatedParts with CurrentProduct contents
                 for (int i = 0; i < Inventory.CurrentProduct.AssociatedParts.Count; i++)
                 {
                     temp.addAssociatedPart(Inventory.CurrentProduct.AssociatedParts[i]);
                 }
+                //formatting for associatedPartDGV
                 associatedPartDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 associatedPartDGV.DefaultCellStyle.SelectionBackColor = associatedPartDGV.DefaultCellStyle.BackColor;
                 associatedPartDGV.DefaultCellStyle.SelectionForeColor = associatedPartDGV.DefaultCellStyle.ForeColor;
                 associatedPartDGV.RowHeadersVisible = false;
                 associatedPartDGV.DataSource = temp.AssociatedParts;
-                //formatting for textboxes
                 //populating textboxes
                 productIDTextBox.Text = Inventory.CurrentProduct.ProductID.ToString();
                 productNameTextBox.Text = Inventory.CurrentProduct.Name;
@@ -169,6 +167,7 @@ namespace JustinTownleySoftwareI
                         Int32.Parse(productInventoryTextBox.Text),
                         Int32.Parse(productMinTextBox.Text),
                         Int32.Parse(productMaxTextBox.Text)));
+                    //copying contents of temp.AssociatedParts to new product
                     int index = Inventory.Products.Count - 1;
                     for (int i = 0; i < temp.AssociatedParts.Count; i++)
                     {
@@ -186,6 +185,7 @@ namespace JustinTownleySoftwareI
                         Int32.Parse(productInventoryTextBox.Text),
                         Int32.Parse(productMinTextBox.Text),
                         Int32.Parse(productMaxTextBox.Text)));
+                    //copying contents of temp.AssociatedParts to modified product
                     for (int i = 0; i < temp.AssociatedParts.Count; i++)
                     {
                         Inventory.Products[Inventory.CurrentProductIndex].addAssociatedPart(temp.AssociatedParts[i]);
@@ -341,8 +341,6 @@ namespace JustinTownleySoftwareI
             {
                 productMinTextBox.BackColor = System.Drawing.Color.White;
             }
-        }
-
-        
+        }        
     }
 }
