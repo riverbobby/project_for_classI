@@ -33,7 +33,12 @@ namespace JustinTownleySoftwareI
                 associatedPartDGV.DefaultCellStyle.SelectionForeColor = associatedPartDGV.DefaultCellStyle.ForeColor;
                 associatedPartDGV.DataSource = temp.AssociatedParts;
                 //formatting for textboxes
+                productIDTextBox.Text = "Created when Saved";
                 productNameTextBox.BackColor = System.Drawing.Color.Crimson;
+                productInventoryTextBox.BackColor = System.Drawing.Color.Crimson;
+                productPriceTextBox.BackColor = System.Drawing.Color.Crimson;
+                productMaxTextBox.BackColor = System.Drawing.Color.Crimson;
+                productMinTextBox.BackColor = System.Drawing.Color.Crimson;
             }
             //If modifying an existing product
             else
@@ -46,7 +51,10 @@ namespace JustinTownleySoftwareI
                 availablePartDGV.RowHeadersVisible = false;
                 availablePartDGV.DataSource = Inventory.AllParts;
                 //formatting for associatedPartDGV
-                temp = Inventory.CurrentProduct;
+                for (int i = 0; i < Inventory.CurrentProduct.AssociatedParts.Count; i++)
+                {
+                    temp.addAssociatedPart(Inventory.CurrentProduct.AssociatedParts[i]);
+                }
                 associatedPartDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 associatedPartDGV.DefaultCellStyle.SelectionBackColor = associatedPartDGV.DefaultCellStyle.BackColor;
                 associatedPartDGV.DefaultCellStyle.SelectionForeColor = associatedPartDGV.DefaultCellStyle.ForeColor;
@@ -54,12 +62,12 @@ namespace JustinTownleySoftwareI
                 associatedPartDGV.DataSource = temp.AssociatedParts;
                 //formatting for textboxes
                 //populating textboxes
-                productIDTextBox.Text = temp.ProductID.ToString();
-                productNameTextBox.Text = temp.Name;
-                productInventoryTextBox.Text = temp.InStock.ToString();
-                productPriceTextBox.Text = temp.Price.ToString();
-                productMaxTextBox.Text = temp.Max.ToString();
-                productMinTextBox.Text = temp.Min.ToString();
+                productIDTextBox.Text = Inventory.CurrentProduct.ProductID.ToString();
+                productNameTextBox.Text = Inventory.CurrentProduct.Name;
+                productInventoryTextBox.Text = Inventory.CurrentProduct.InStock.ToString();
+                productPriceTextBox.Text = Inventory.CurrentProduct.Price.ToString();
+                productMaxTextBox.Text = Inventory.CurrentProduct.Max.ToString();
+                productMinTextBox.Text = Inventory.CurrentProduct.Min.ToString();
 
             }
 
@@ -123,6 +131,74 @@ namespace JustinTownleySoftwareI
             Inventory.CurrentAssociatedPartID = (int)associatedPartDGV.Rows[Inventory.CurrentAssociatedPartIndex].Cells[0].Value;
             Inventory.CurrentAssociatedPart = temp.lookupAssociatedPart(Inventory.CurrentAssociatedPartID);
             associatedPartDGV.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Green;
+        }
+
+        private void productNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(productNameTextBox.Text))
+            {
+                productNameTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                productNameTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void productInventoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int number;
+            if (string.IsNullOrWhiteSpace(productInventoryTextBox.Text) ||
+                (!Int32.TryParse(productInventoryTextBox.Text, out number)))
+            {
+                productInventoryTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                productInventoryTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void productPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            decimal number;
+            if (string.IsNullOrWhiteSpace(productPriceTextBox.Text) ||
+            (!Decimal.TryParse(productPriceTextBox.Text, out number)))
+            {
+                productPriceTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                productPriceTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void productMaxTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int number;
+            if (string.IsNullOrWhiteSpace(productMaxTextBox.Text) ||
+            (!Int32.TryParse(productMaxTextBox.Text, out number)))
+            {
+                productMaxTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                productMaxTextBox.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void productMinTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int number;
+            if (string.IsNullOrWhiteSpace(productMinTextBox.Text) ||
+            (!Int32.TryParse(productMinTextBox.Text, out number)))
+            {
+                productMinTextBox.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                productMinTextBox.BackColor = System.Drawing.Color.White;
+            }
         }
     }
 }

@@ -133,6 +133,7 @@ namespace JustinTownleySoftwareI
             this.productMinTextBox.Name = "productMinTextBox";
             this.productMinTextBox.Size = new System.Drawing.Size(70, 23);
             this.productMinTextBox.TabIndex = 23;
+            this.productMinTextBox.TextChanged += new System.EventHandler(this.productMinTextBox_TextChanged);
             // 
             // productMaxTextBox
             // 
@@ -140,6 +141,7 @@ namespace JustinTownleySoftwareI
             this.productMaxTextBox.Name = "productMaxTextBox";
             this.productMaxTextBox.Size = new System.Drawing.Size(70, 23);
             this.productMaxTextBox.TabIndex = 22;
+            this.productMaxTextBox.TextChanged += new System.EventHandler(this.productMaxTextBox_TextChanged);
             // 
             // productPriceTextBox
             // 
@@ -147,6 +149,7 @@ namespace JustinTownleySoftwareI
             this.productPriceTextBox.Name = "productPriceTextBox";
             this.productPriceTextBox.Size = new System.Drawing.Size(135, 23);
             this.productPriceTextBox.TabIndex = 21;
+            this.productPriceTextBox.TextChanged += new System.EventHandler(this.productPriceTextBox_TextChanged);
             // 
             // productInventoryTextBox
             // 
@@ -154,6 +157,7 @@ namespace JustinTownleySoftwareI
             this.productInventoryTextBox.Name = "productInventoryTextBox";
             this.productInventoryTextBox.Size = new System.Drawing.Size(135, 23);
             this.productInventoryTextBox.TabIndex = 20;
+            this.productInventoryTextBox.TextChanged += new System.EventHandler(this.productInventoryTextBox_TextChanged);
             // 
             // productNameTextBox
             // 
@@ -161,6 +165,7 @@ namespace JustinTownleySoftwareI
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.Size = new System.Drawing.Size(135, 23);
             this.productNameTextBox.TabIndex = 19;
+            this.productNameTextBox.TextChanged += new System.EventHandler(this.productNameTextBox_TextChanged);
             // 
             // productIDTextBox
             // 
