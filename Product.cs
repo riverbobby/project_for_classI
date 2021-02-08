@@ -35,20 +35,20 @@ namespace JustinTownleySoftwareI
             Max = max;
         }
         //constructor for new products
-        public Product(BindingList<Part> parts, string n, decimal p, int inStock, int min, int max)
-        {
-            AssociatedParts = parts;
-            ProductID = ++productCount;
-            Name = n;
-            Price = p;
-            InStock = inStock;
-            Min = min;
-            Max = max;
-        }
+        //public Product(BindingList<Part> parts, string n, decimal p, int inStock, int min, int max)
+        //{
+        //    AssociatedParts = parts;
+        //    ProductID = ++productCount;
+        //    Name = n;
+        //    Price = p;
+        //    InStock = inStock;
+        //    Min = min;
+        //    Max = max;
+        //}
         //constructor for modified products
-        public Product(BindingList<Part> parts, int pID, string n, decimal p, int inStock, int min, int max)
+        public Product(/*BindingList<Part> parts, */int pID, string n, decimal p, int inStock, int min, int max)
         {
-            AssociatedParts = parts;
+            //AssociatedParts = parts;
             ProductID = pID;
             Name = n;
             Price = p;

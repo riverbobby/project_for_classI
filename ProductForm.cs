@@ -158,11 +158,44 @@ namespace JustinTownleySoftwareI
             {
                 MessageBox.Show(messageBuilder);
             }
+            //this path creates a new product or modifies an existing product
             else
             {
-                MessageBox.Show("building as new Product");
+                //constructor called for new product and new product assigned to Products
+                if (Inventory.CurrentProductIndex < 0)
+                {
+                    Inventory.addProduct(new Product(productNameTextBox.Text,
+                        Decimal.Parse(productPriceTextBox.Text),
+                        Int32.Parse(productInventoryTextBox.Text),
+                        Int32.Parse(productMinTextBox.Text),
+                        Int32.Parse(productMaxTextBox.Text)));
+                    int index = Inventory.Products.Count - 1;
+                    for (int i = 0; i < temp.AssociatedParts.Count; i++)
+                    {
+                        Inventory.Products[index].addAssociatedPart(temp.AssociatedParts[i]);
+                    }
+
+                }
+                //constructor called for existing part and swapped for unmodified part in AllParts
+                else
+                {
+                    Inventory.updateProduct(Inventory.CurrentProductIndex, 
+                        new Product(Int32.Parse(productIDTextBox.Text),
+                        productNameTextBox.Text,
+                        Decimal.Parse(productPriceTextBox.Text),
+                        Int32.Parse(productInventoryTextBox.Text),
+                        Int32.Parse(productMinTextBox.Text),
+                        Int32.Parse(productMaxTextBox.Text)));
+                    for (int i = 0; i < temp.AssociatedParts.Count; i++)
+                    {
+                        Inventory.Products[Inventory.CurrentProductIndex].addAssociatedPart(temp.AssociatedParts[i]);
+                    }
+                }
+                this.Hide();
+                InventoryForm inventoryForm = new InventoryForm();
+                inventoryForm.Show();
             }
-            
+
         }
         private void productCancelButton_Click(object sender, EventArgs e)
         {
