@@ -124,9 +124,17 @@ namespace JustinTownleySoftwareI
 
         private void modifyProductButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ProductForm productForm = new ProductForm();
-            productForm.Show();
+            if (Inventory.CurrentProductIndex >= 0)
+            {
+                this.Hide();
+                ProductForm productForm = new ProductForm();
+                productForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a product to modify");
+            }
+            
         }
         private void deleteProductButton_Click(object sender, EventArgs e)
         {
