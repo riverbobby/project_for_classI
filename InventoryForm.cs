@@ -130,15 +130,29 @@ namespace JustinTownleySoftwareI
             ProductForm productForm = new ProductForm();
             productForm.Show();
         }
-        //Since a product cannot be added that does not have associated parts
-        //and an product cannot be modified to have no associated parts
-        //it follows that products cannot be deleted, therefore I made the button
-        //below simply provide a message box.
         private void deleteProductButton_Click(object sender, EventArgs e)
         {
             if (Inventory.CurrentProductIndex >= 0)
             {
-                MessageBox.Show("A Product with associated parts cannot be deleted!");
+                if (Inventory.CurrentProduct.AssociatedParts.Count == 0)
+                {
+                    if (Inventory.removeProduct(Inventory.CurrentProductIndex))
+                    {
+                        MessageBox.Show("Product was deleted!");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Product may or may not have been deleted!");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("A Product with associated parts cannot be deleted!");
+                    return;
+                }
+                
             }
             else
             {
